@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PF Tracker — Professional Fees</title>
+<style>
+:root{--navy:#12243a;--blue:#2457c5;--teal:#0d9488;--bg:#f4f7fb;--card:#fff;--ink:#182538;--muted:#6b778b;--line:#e2e8f0;--red:#b42318;--shadow:0 8px 28px #172b4d0b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font:14px/1.45 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;color:var(--ink)}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0;border-radius:9px;padding:10px 14px;font-weight:650}.primary{background:var(--blue);color:#fff}.secondary{background:#eaf0ff;color:#2049a4}.ghost{background:#f1f5f9;color:#334155}.danger{background:#fff0ef;color:var(--red)}.app{display:grid;grid-template-columns:235px minmax(0,1fr);min-height:100vh}.side{background:var(--navy);color:#fff;padding:26px 16px;display:flex;flex-direction:column;gap:25px}.brand{display:flex;gap:11px;align-items:center;padding:0 8px}.logo{width:39px;height:39px;border-radius:12px;background:#3b72e8;display:grid;place-items:center;font-size:20px;font-weight:800}.brand strong{font-size:16px;display:block}.brand small{color:#aebbd0}.nav{display:grid;gap:6px}.nav button{background:transparent;color:#c7d2e2;text-align:left;padding:12px;display:flex;gap:11px;align-items:center}.nav button.active,.nav button:hover{background:#233b59;color:#fff}.side-note{margin-top:auto;color:#aebbd0;font-size:12px;padding:8px}.main{min-width:0;padding:27px clamp(16px,3vw,38px) 40px}.top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:24px}.eyebrow{color:var(--blue);font-weight:750;text-transform:uppercase;font-size:11px;letter-spacing:.11em}.top h1{margin:3px 0 0;font-size:clamp(24px,3vw,31px);letter-spacing:-.04em}.top p{margin:4px 0 0;color:var(--muted)}.top-actions{display:flex;gap:8px;flex-wrap:wrap}.view{display:none}.view.active{display:block}.grid{display:grid;gap:16px}.stats{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:18px}.stat,.panel{background:var(--card);border:1px solid var(--line);border-radius:15px;box-shadow:var(--shadow)}.stat{padding:18px}.stat-label{color:var(--muted);font-size:12px;font-weight:650}.stat-value{font-size:26px;font-weight:800;letter-spacing:-.04em;margin:9px 0 2px}.stat-sub{color:var(--muted);font-size:12px}.panel{padding:20px;margin-bottom:17px}.panel-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}.panel h2{font-size:16px;margin:0;letter-spacing:-.02em}.panel-head p{color:var(--muted);margin:4px 0 0;font-size:12px}.two{grid-template-columns:1.2fr .8fr}.field-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.field{display:grid;gap:6px}.field label{font-size:12px;color:#526075;font-weight:700}.field input,.field select,.field textarea,.filters input,.filters select{width:100%;padding:10px 11px;border:1px solid #d7deea;border-radius:9px;background:#fff;color:var(--ink);outline:none}.field input:focus,.field select:focus,.filters input:focus,.filters select:focus{border-color:#7596ed;box-shadow:0 0 0 3px #2457c515}.span2{grid-column:span 2}.form-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:17px}.filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:15px}.filters>*{flex:1;min-width:140px}.filters button{flex:0 0 auto}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:11px}table{width:100%;border-collapse:collapse;white-space:nowrap;background:#fff}th,td{padding:12px 13px;border-bottom:1px solid #edf0f5;text-align:left}th{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#68768b;background:#f8fafc}td{font-size:13px}tbody tr:last-child td{border-bottom:0}td.amount{font-weight:750;font-variant-numeric:tabular-nums}td.actions{display:flex;gap:5px}.mini{font-size:11px;padding:6px 8px}.pill{display:inline-block;padding:4px 8px;background:#edf3ff;color:#2851aa;border-radius:20px;font-size:11px;font-weight:700}.muted{color:var(--muted)}.empty{text-align:center;color:var(--muted);padding:28px}.report-grid{grid-template-columns:1fr 1fr}.bar-list{display:grid;gap:13px}.bar-row{display:grid;grid-template-columns:minmax(90px,150px) 1fr auto;gap:10px;align-items:center}.bar-name{font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.bar-track{height:9px;border-radius:20px;background:#edf1f7;overflow:hidden}.bar-fill{height:100%;border-radius:20px;background:linear-gradient(90deg,#4778e6,#12a594)}.bar-val{font-size:12px;font-weight:750;font-variant-numeric:tabular-nums}.settings-grid{grid-template-columns:1fr 1fr}.chips{display:flex;gap:7px;flex-wrap:wrap}.chip{display:flex;align-items:center;gap:7px;background:#f4f7fb;border:1px solid var(--line);padding:7px 9px;border-radius:8px;font-size:12px}.chip button{padding:0;background:transparent;color:#9a3940;font-size:16px}.addline{display:flex;gap:8px;margin-top:12px}.addline input{min-width:0;flex:1;padding:9px;border:1px solid #d7deea;border-radius:8px}.notice{background:#eef6ff;border:1px solid #cfe2ff;padding:12px 14px;border-radius:10px;color:#254b86;font-size:12px;margin-bottom:17px}.modal-bg{display:none;position:fixed;inset:0;background:#0b1728a8;z-index:5;padding:18px;align-items:center;justify-content:center}.modal-bg.open{display:flex}.modal{background:#fff;width:min(520px,100%);padding:23px;border-radius:16px;box-shadow:0 20px 80px #0003}.modal h2{margin:0 0 8px}.modal p{color:var(--muted);font-size:13px}.file-label{display:inline-flex;align-items:center;gap:7px}.smallprint{font-size:11px;color:var(--muted);margin-top:13px}
+@media(max-width:950px){.app{grid-template-columns:1fr}.side{padding:13px 16px;gap:12px}.brand{padding:0}.nav{display:flex;overflow:auto}.nav button{white-space:nowrap;padding:9px 11px}.side-note{display:none}.main{padding-top:20px}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.two,.report-grid,.settings-grid{grid-template-columns:1fr}}
+@media(max-width:580px){.top{align-items:flex-start;flex-direction:column}.field-grid{grid-template-columns:1fr}.span2{grid-column:auto}.stat{padding:14px}.stat-value{font-size:22px}.panel{padding:14px}.bar-row{grid-template-columns:90px 1fr auto}.filters>*{min-width:125px}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="side">
+  <div class="brand"><div class="logo">₱</div><div><strong>PF Tracker</strong><small>Professional fees</small></div></div>
+  <nav class="nav">
+    <button class="active" data-view="dashboard">◫ &nbsp; Dashboard</button>
+    <button data-view="entries">＋ &nbsp; Fee entries</button>
+    <button data-view="reports">▥ &nbsp; Reports & summaries</button>
+    <button data-view="settings">⚙ &nbsp; Customize lists</button>
+  </nav>
+  <div class="side-note">Your data stays in this browser unless you export or back it up.</div>
+</aside>
+<main class="main">
+<header class="top">
+  <div><div class="eyebrow">Personal finance workspace</div><h1 id="pageTitle">Dashboard</h1><p id="pageSub">A clear view of your professional fees.</p></div>
+  <div class="top-actions"><button class="ghost" id="backupBtn">↧ Backup data</button><button class="primary" id="newEntryBtn">＋ Add fee</button></div>
+</header>
+<section id="dashboard" class="view active">
+  <div class="notice">🔒 <b>Local-first:</b> entries are saved in this browser on this device. Export a backup regularly, especially before clearing browser data.</div>
+  <div class="grid stats">
+    <div class="stat"><div class="stat-label">FEES THIS MONTH</div><div class="stat-value" id="statMonth">₱0.00</div><div class="stat-sub" id="statMonthSub">Current calendar month</div></div>
+    <div class="stat"><div class="stat-label">FEES THIS YEAR</div><div class="stat-value" id="statYear">₱0.00</div><div class="stat-sub">Year to date</div></div>
+    <div class="stat"><div class="stat-label">ALL-TIME RECORDED</div><div class="stat-value" id="statAll">₱0.00</div><div class="stat-sub" id="statCount">0 records</div></div>
+    <div class="stat"><div class="stat-label">UNPAID / PENDING</div><div class="stat-value" id="statPending">₱0.00</div><div class="stat-sub">Based on payment status</div></div>
+  </div>
+  <div class="grid two">
+    <div class="panel"><div class="panel-head"><div><h2>Monthly trend</h2><p>Recorded fees across the last 6 months</p></div></div><div class="bar-list" id="trendBars"></div></div>
+    <div class="panel"><div class="panel-head"><div><h2>Top hospitals</h2><p>All-time totals by affiliation</p></div><button class="secondary mini" data-goto="reports">View report</button></div><div class="bar-list" id="hospitalBars"></div></div>
+  </div>
+  <div class="panel"><div class="panel-head"><div><h2>Recent fee entries</h2><p>Your latest records</p></div><button class="secondary mini" data-goto="entries">All entries</button></div><div class="table-wrap"><table><thead><tr><th>Date</th><th>Hospital</th><th>Source</th><th>Patient / reference</th><th>Amount</th><th>Status</th></tr></thead><tbody id="recentRows"></tbody></table></div></div>
+</section>
+<section id="entries" class="view">
+  <div class="panel">
+    <div class="panel-head"><div><h2 id="formTitle">Add professional fee</h2><p>Record the date, hospital, fee source, and amount.</p></div></div>
+    <form id="feeForm">
+      <input type="hidden" id="editId">
+      <div class="field-grid">
+        <div class="field"><label for="date">Date *</label><input id="date" type="date" required></div>
+        <div class="field"><label for="hospital">Hospital / affiliation *</label><select id="hospital" required></select></div>
+        <div class="field"><label for="source">Fee source *</label><select id="source" required></select></div>
+        <div class="field"><label for="amount">Professional fee (₱) *</label><input id="amount" type="number" min="0" step="0.01" placeholder="0.00" required></div>
+        <div class="field"><label for="status">Payment status</label><select id="status"><option>Received</option><option>Pending</option><option>Partially paid</option><option>Waived</option></select></div>
+        <div class="field"><label for="patient">Patient / reference (optional)</label><input id="patient" placeholder="Initials, case no., or reference"></div>
+        <div class="field"><label for="paymentDate">Date received (optional)</label><input id="paymentDate" type="date"></div>
+        <div class="field"><label for="receipt">OR / invoice no. (optional)</label><input id="receipt" placeholder="Receipt or reference no."></div>
+        <div class="field"><label for="notes">Notes (optional)</label><input id="notes" placeholder="Additional details"></div>
+      </div>
+      <div class="form-actions"><button type="button" class="ghost" id="cancelEdit" style="display:none">Cancel edit</button><button type="reset" class="ghost" id="resetForm">Clear</button><button type="submit" class="primary" id="saveBtn">Save fee entry</button></div>
+    </form>
+  </div>
+  <div class="panel"><div class="panel-head"><div><h2>Fee ledger</h2><p>Search, filter, edit, or export individual records.</p></div><button class="secondary" id="exportCsv">Export CSV</button></div>
+    <div class="filters">
+      <input id="entrySearch" placeholder="Search patient, notes, receipt…">
+      <select id="entryHospital"><option value="">All hospitals</option></select>
+      <select id="entrySource"><option value="">All sources</option></select>
+      <select id="entryStatus"><option value="">All statuses</option><option>Received</option><option>Pending</option><option>Partially paid</option><option>Waived</option></select>
+      <input id="entryFrom" type="date" title="From date"><input id="entryTo" type="date" title="To date">
+      <button class="ghost" id="clearEntryFilters">Clear filters</button>
+    </div>
+    <div class="table-wrap"><table><thead><tr><th>Date</th><th>Hospital</th><th>Source</th><th>Patient / reference</th><th>Amount</th><th>Status</th><th>Actions</th></tr></thead><tbody id="entryRows"></tbody></table></div>
+    <div class="panel-head" style="margin:13px 0 0"><span class="muted" id="entryCount">0 records</span><strong id="entryTotal">Total: ₱0.00</strong></div>
+  </div>
+</section>
+<section id="reports" class="view">
+  <div class="panel">
+    <div class="panel-head"><div><h2>Custom report builder</h2><p>Choose exactly what you want to see. Filters apply to the summary, breakdowns, and detail table.</p></div><button class="secondary" id="exportReport">Export report CSV</button></div>
+    <div class="field-grid">
+      <div class="field"><label for="reportFrom">From date</label><input type="date" id="reportFrom"></div>
+      <div class="field"><label for="reportTo">To date</label><input type="date" id="reportTo"></div>
+      <div class="field"><label for="reportHospital">Hospital</label><select id="reportHospital"><option value="">All hospitals</option></select></div>
+      <div class="field"><label for="reportSource">Fee source</label><select id="reportSource"><option value="">All sources</option></select></div>
+      <div class="field"><label for="reportStatus">Payment status</label><select id="reportStatus"><option value="">All statuses</option><option>Received</option><option>Pending</option><option>Partially paid</option><option>Waived</option></select></div>
+      <div class="field"><label for="groupBy">Breakdown grouping</label><select id="groupBy"><option value="hospital">By hospital</option><option value="source">By fee source</option><option value="month">By month</option><option value="hospitalSource">Hospital + source</option><option value="status">By payment status</option></select></div>
+    </div>
+    <div class="form-actions"><button class="ghost" id="resetReport">Reset filters</button><button class="primary" id="runReport">Update report</button></div>
+  </div>
+  <div class="grid stats">
+    <div class="stat"><div class="stat-label">MATCHING FEES</div><div class="stat-value" id="reportTotal">₱0.00</div><div class="stat-sub" id="reportRange">All recorded dates</div></div>
+    <div class="stat"><div class="stat-label">RECORDS</div><div class="stat-value" id="reportRecords">0</div><div class="stat-sub">Matching entries</div></div>
+    <div class="stat"><div class="stat-label">RECEIVED</div><div class="stat-value" id="reportReceived">₱0.00</div><div class="stat-sub">Marked received</div></div>
+    <div class="stat"><div class="stat-label">PENDING / PARTIAL</div><div class="stat-value" id="reportOutstanding">₱0.00</div><div class="stat-sub">Pending and partially paid</div></div>
+  </div>
+  <div class="grid report-grid">
+    <div class="panel"><div class="panel-head"><div><h2 id="breakdownTitle">Breakdown</h2><p>Totals based on current filters</p></div></div><div class="bar-list" id="reportBars"></div></div>
+    <div class="panel"><div class="panel-head"><div><h2>Monthly summary by hospital</h2><p>Filtered entries grouped by calendar month and hospital</p></div></div><div class="table-wrap"><table><thead><tr><th>Month</th><th>Hospital</th><th>Entries</th><th>Total fees</th></tr></thead><tbody id="monthlyRows"></tbody></table></div></div>
+  </div>
+  <div class="panel"><div class="panel-head"><div><h2>Report details</h2><p>Every entry matching your selected filters.</p></div></div><div class="table-wrap"><table><thead><tr><th>Date</th><th>Hospital</th><th>Source</th><th>Reference</th><th>Amount</th><th>Status</th></tr></thead><tbody id="reportRows"></tbody></table></div></div>
+</section>
+<section id="settings" class="view">
+  <div class="notice">Customize your hospital and source dropdowns at any time. Existing records keep their saved category labels even if you later remove a label from the dropdown list.</div>
+  <div class="grid settings-grid">
+    <div class="panel"><div class="panel-head"><div><h2>Hospital affiliations</h2><p>Add or remove options in the hospital list.</p></div></div><div id="hospitalChips" class="chips"></div><form class="addline" id="hospitalAddForm"><input id="hospitalNew" placeholder="Add hospital / affiliation" required><button class="primary">Add</button></form></div>
+    <div class="panel"><div class="panel-head"><div><h2>Fee sources</h2><p>Add or remove fee source categories.</p></div></div><div id="sourceChips" class="chips"></div><form class="addline" id="sourceAddForm"><input id="sourceNew" placeholder="Add fee source" required><button class="primary">Add</button></form></div>
+  </div>
+  <div class="panel"><div class="panel-head"><div><h2>Data & privacy</h2><p>Keep a copy of your data and move it between browsers.</p></div></div><p class="muted">This website stores data in local browser storage. It does not send entries to a server. Anyone with access to this browser profile may be able to view the records, so use a private device and avoid entering unnecessary patient-identifying information.</p><div class="top-actions"><button class="primary" id="backupBtn2">Download JSON backup</button><label class="ghost file-label" style="padding:10px 14px;border-radius:9px;cursor:pointer">Import backup <input id="importFile" type="file" accept=".json,application/json" hidden></label><button class="danger" id="clearAll">Delete all records</button></div><div class="smallprint">Importing a backup replaces the current records and custom lists. Export a backup first if you want to preserve the current data.</div></div>
+</section>
+</main>
+</div>
+<div class="modal-bg" id="confirmModal"><div class="modal"><h2 id="modalTitle">Confirm action</h2><p id="modalText">Are you sure?</p><div class="form-actions"><button class="ghost" id="modalCancel">Cancel</button><button class="danger" id="modalConfirm">Confirm</button></div></div></div>
+<script>
+const DEFAULT_HOSPITALS=['MCU','CDH','ACE Muzon','ACE QC','Healthway QC','SeriousMD','St. Paul Hospital','MHMC','Others'];
+const DEFAULT_SOURCES=['OPD','Procedure','Admission','HMO OPD','HMO Procedure','HMO Admission','Others'];
+const KEY='pfTrackerLocal_v1';
+let db={entries:[],hospitals:[...DEFAULT_HOSPITALS],sources:[...DEFAULT_SOURCES]};
+const $=id=>document.getElementById(id);
+const money=n=>'₱'+Number(n||0).toLocaleString('en-PH',{minimumFractionDigits:2,maximumFractionDigits:2});
+const today=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`};
+const monthKey=d=>(d||'').slice(0,7);
+const monthLabel=k=>{if(!k)return 'Undated';const [y,m]=k.split('-').map(Number);return new Date(y,m-1,1).toLocaleDateString('en-US',{month:'short',year:'numeric'})};
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const sum=arr=>arr.reduce((a,e)=>a+Number(e.amount||0),0);
+function load(){try{const x=JSON.parse(localStorage.getItem(KEY)||'null');if(x&&Array.isArray(x.entries)){db={entries:x.entries,hospitals:Array.isArray(x.hospitals)?x.hospitals:[...DEFAULT_HOSPITALS],sources:Array.isArray(x.sources)?x.sources:[...DEFAULT_SOURCES]}}}catch(e){console.warn('Could not load local data',e)}}
+function save(){localStorage.setItem(KEY,JSON.stringify(db))}
+function options(select,items,allLabel){const old=select.value;select.innerHTML=(allLabel?`<option value="">${esc(allLabel)}</option>`:'')+items.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join('');if(items.includes(old))select.value=old}
+function refreshLists(){options($('hospital'),db.hospitals);options($('source'),db.sources);options($('entryHospital'),db.hospitals,'All hospitals');options($('entrySource'),db.sources,'All sources');options($('reportHospital'),db.hospitals,'All hospitals');options($('reportSource'),db.sources,'All sources');renderSettings()}
+function entryFilters(){return db.entries.filter(e=>(!$('entrySearch').value||[e.patient,e.notes,e.receipt,e.hospital,e.source].join(' ').toLowerCase().includes($('entrySearch').value.toLowerCase()))&&(!$('entryHospital').value||e.hospital===$('entryHospital').value)&&(!$('entrySource').value||e.source===$('entrySource').value)&&(!$('entryStatus').value||e.status===$('entryStatus').value)&&(!$('entryFrom').value||e.date>=$('entryFrom').value)&&(!$('entryTo').value||e.date<=$('entryTo').value)).sort((a,b)=>(b.date||'').localeCompare(a.date||''))}
+function reportEntries(){return db.entries.filter(e=>(!$('reportFrom').value||e.date>=$('reportFrom').value)&&(!$('reportTo').value||e.date<=$('reportTo').value)&&(!$('reportHospital').value||e.hospital===$('reportHospital').value)&&(!$('reportSource').value||e.source===$('reportSource').value)&&(!$('reportStatus').value||e.status===$('reportStatus').value)).sort((a,b)=>(b.date||'').localeCompare(a.date||''))}
+function emptyRow(cols,msg='No matching records yet.'){return `<tr><td colspan="${cols}" class="empty">${msg}</td></tr>`}
+function renderDashboard(){
+ const now=today(),m=monthKey(now),y=now.slice(0,4),all=db.entries;
+ const thisM=all.filter(e=>monthKey(e.date)===m),thisY=all.filter(e=>(e.date||'').startsWith(y));
+ $('statMonth').textContent=money(sum(thisM));$('statYear').textContent=money(sum(thisY));$('statAll').textContent=money(sum(all));$('statCount').textContent=`${all.length} recorded ${all.length===1?'entry':'entries'}`;$('statPending').textContent=money(sum(all.filter(e=>['Pending','Partially paid'].includes(e.status))));
+ const trend=[];for(let i=5;i>=0;i--){let d=new Date();d.setDate(1);d.setMonth(d.getMonth()-i);let k=`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`;trend.push({name:monthLabel(k),value:sum(all.filter(e=>monthKey(e.date)===k))})}drawBars('trendBars',trend);
+ const hosp=db.hospitals.map(name=>({name,value:sum(all.filter(e=>e.hospital===name))})).filter(x=>x.value>0).sort((a,b)=>b.value-a.value).slice(0,7);drawBars('hospitalBars',hosp);
+ $('recentRows').innerHTML=all.slice().sort((a,b)=>(b.date||'').localeCompare(a.date||'')).slice(0,6).map(e=>`<tr><td>${esc(e.date)}</td><td>${esc(e.hospital)}</td><td><span class="pill">${esc(e.source)}</span></td><td>${esc(e.patient||'—')}</td><td class="amount">${money(e.amount)}</td><td>${esc(e.status)}</td></tr>`).join('')||emptyRow(6,'No fees recorded. Add your first entry above.');
+}
+function drawBars(id,items){const max=Math.max(1,...items.map(x=>x.value));$(id).innerHTML=items.length?items.map(x=>`<div class="bar-row"><div class="bar-name" title="${esc(x.name)}">${esc(x.name)}</div><div class="bar-track"><div class="bar-fill" style="width:${Math.max(1,x.value/max*100)}%"></div></div><div class="bar-val">${money(x.value)}</div></div>`).join(''):'<div class="empty">No data to display.</div>'}
+function renderEntries(){const arr=entryFilters();$('entryRows').innerHTML=arr.map(e=>`<tr><td>${esc(e.date)}</td><td>${esc(e.hospital)}</td><td><span class="pill">${esc(e.source)}</span></td><td>${esc(e.patient||'—')}</td><td class="amount">${money(e.amount)}</td><td>${esc(e.status)}</td><td class="actions"><button class="secondary mini" onclick="editEntry('${e.id}')">Edit</button><button class="danger mini" onclick="deleteEntry('${e.id}')">Delete</button></td></tr>`).join('')||emptyRow(7);$('entryCount').textContent=`${arr.length} ${arr.length===1?'record':'records'}`;$('entryTotal').textContent=`Filtered total: ${money(sum(arr))}`}
+function renderReport(){const arr=reportEntries(),total=sum(arr);$('reportTotal').textContent=money(total);$('reportRecords').textContent=arr.length;$('reportReceived').textContent=money(sum(arr.filter(e=>e.status==='Received')));$('reportOutstanding').textContent=money(sum(arr.filter(e=>['Pending','Partially paid'].includes(e.status))));$('reportRange').textContent=($('reportFrom').value||'Start')+' → '+($('reportTo').value||'Today / latest');
+ const group=$('groupBy').value;const map={};arr.forEach(e=>{let k=group==='hospital'?e.hospital:group==='source'?e.source:group==='month'?monthLabel(monthKey(e.date)):group==='status'?e.status:`${e.hospital} · ${e.source}`;map[k]=(map[k]||0)+Number(e.amount||0)});const items=Object.entries(map).map(([name,value])=>({name,value})).sort((a,b)=>b.value-a.value);$('breakdownTitle').textContent=({hospital:'Fees by hospital',source:'Fees by source',month:'Fees by month',status:'Fees by payment status',hospitalSource:'Fees by hospital + source'})[group];drawBars('reportBars',items);
+ const monthly={};arr.forEach(e=>{const k=`${monthKey(e.date)}|||${e.hospital}`;if(!monthly[k])monthly[k]={month:monthKey(e.date),hospital:e.hospital,count:0,total:0};monthly[k].count++;monthly[k].total+=Number(e.amount||0)});const rows=Object.values(monthly).sort((a,b)=>b.month.localeCompare(a.month)||a.hospital.localeCompare(b.hospital));$('monthlyRows').innerHTML=rows.map(r=>`<tr><td>${esc(monthLabel(r.month))}</td><td>${esc(r.hospital)}</td><td>${r.count}</td><td class="amount">${money(r.total)}</td></tr>`).join('')||emptyRow(4);$('reportRows').innerHTML=arr.map(e=>`<tr><td>${esc(e.date)}</td><td>${esc(e.hospital)}</td><td>${esc(e.source)}</td><td>${esc(e.patient||e.receipt||'—')}</td><td class="amount">${money(e.amount)}</td><td>${esc(e.status)}</td></tr>`).join('')||emptyRow(6)}
+function renderSettings(){[['hospitalChips',db.hospitals,'hospital'],['sourceChips',db.sources,'source']].forEach(([id,items,type])=>{$(id).innerHTML=items.map((x,i)=>`<span class="chip">${esc(x)} <button type="button" aria-label="Remove ${esc(x)}" title="Remove" onclick="removeOption('${type}',${i})">×</button></span>`).join('')})}
+function renderAll(){refreshLists();renderDashboard();renderEntries();renderReport()}
+function navigate(view){document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===view));document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===view));const info={dashboard:['Dashboard','A clear view of your professional fees.'],entries:['Fee entries','Add and manage your professional fee records.'],reports:['Reports & summaries','Explore totals by hospital, source, and month.'],settings:['Customize lists','Manage your categories and data backups.']}[$(view).id];$('pageTitle').textContent=info[0];$('pageSub').textContent=info[1];if(view==='reports')renderReport();if(view==='entries')renderEntries();window.scrollTo({top:0,behavior:'smooth'})}
+function resetForm(){ $('feeForm').reset();$('editId').value='';$('date').value=today();$('status').value='Received';$('formTitle').textContent='Add professional fee';$('saveBtn').textContent='Save fee entry';$('cancelEdit').style.display='none'}
+$('feeForm').addEventListener('submit',ev=>{ev.preventDefault();const id=$('editId').value||`${Date.now()}-${Math.random().toString(36).slice(2,8)}`;const old=db.entries.find(e=>e.id===id);const entry={id,date:$('date').value,hospital:$('hospital').value,source:$('source').value,amount:Number($('amount').value),status:$('status').value,patient:$('patient').value.trim(),paymentDate:$('paymentDate').value,receipt:$('receipt').value.trim(),notes:$('notes').value.trim(),createdAt:old?.createdAt||new Date().toISOString()};if(old)db.entries=db.entries.map(e=>e.id===id?entry:e);else db.entries.push(entry);save();resetForm();renderAll();navigate('entries')});
+window.editEntry=id=>{const e=db.entries.find(x=>x.id===id);if(!e)return;navigate('entries');$('editId').value=e.id;['date','hospital','source','amount','status','patient','paymentDate','receipt','notes'].forEach(k=>$(k).value=e[k]??'');$('formTitle').textContent='Edit professional fee';$('saveBtn').textContent='Save changes';$('cancelEdit').style.display='inline-block';$('formTitle').scrollIntoView({behavior:'smooth',block:'center'})};
+function showConfirm(title,msg,action,label='Confirm'){ $('modalTitle').textContent=title;$('modalText').textContent=msg;$('modalConfirm').textContent=label;$('confirmModal').classList.add('open');$('modalConfirm').onclick=()=>{$('confirmModal').classList.remove('open');action()}}
+window.deleteEntry=id=>{showConfirm('Delete fee entry?','This entry will be permanently removed from this browser.',()=>{db.entries=db.entries.filter(e=>e.id!==id);save();renderAll() },'Delete')};
+window.removeOption=(type,i)=>{const list=type==='hospital'?'hospitals':'sources';showConfirm('Remove category?','This only removes the option from the dropdown. Existing entries are kept.',()=>{db[list].splice(i,1);save();renderAll()},'Remove')};
+$('modalCancel').onclick=()=>$('confirmModal').classList.remove('open');$('cancelEdit').onclick=resetForm;$('resetForm').addEventListener('click',()=>setTimeout(resetForm,0));$('newEntryBtn').onclick=()=>{resetForm();navigate('entries');$('date').value=today();$('date').focus()};document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>navigate(b.dataset.view));document.querySelectorAll('[data-goto]').forEach(b=>b.onclick=()=>navigate(b.dataset.goto));
+['entrySearch','entryHospital','entrySource','entryStatus','entryFrom','entryTo'].forEach(id=>$(id).addEventListener(id==='entrySearch'?'input':'change',renderEntries));
+$('clearEntryFilters').onclick=()=>{['entrySearch','entryHospital','entrySource','entryStatus','entryFrom','entryTo'].forEach(id=>$(id).value='');renderEntries()};
+['reportFrom','reportTo','reportHospital','reportSource','reportStatus','groupBy'].forEach(id=>$(id).addEventListener('change',renderReport));$('runReport').onclick=renderReport;$('resetReport').onclick=()=>{['reportFrom','reportTo','reportHospital','reportSource','reportStatus'].forEach(id=>$(id).value='');$('groupBy').value='hospital';renderReport()};
+function download(name,content,type){const blob=new Blob([content],{type});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
+function backup(){download(`pf-tracker-backup-${today()}.json`,JSON.stringify({...db,exportedAt:new Date().toISOString(),formatVersion:1},null,2),'application/json')}
+$('backupBtn').onclick=backup;$('backupBtn2').onclick=backup;
+function csvCell(v){return '"'+String(v??'').replace(/"/g,'""')+'"'}
+function csvExport(arr,name){const cols=[['Date','date'],['Hospital','hospital'],['Source','source'],['Amount PHP','amount'],['Status','status'],['Patient/reference','patient'],['Date received','paymentDate'],['OR/invoice','receipt'],['Notes','notes']];const lines=[cols.map(c=>csvCell(c[0])).join(','),...arr.map(e=>cols.map(c=>csvCell(e[c[1]])).join(','))];download(name,'\ufeff'+lines.join('\r\n'),'text/csv;charset=utf-8')}
+$('exportCsv').onclick=()=>csvExport(entryFilters(),`pf-entries-${today()}.csv`);$('exportReport').onclick=()=>csvExport(reportEntries(),`pf-report-${today()}.csv`);
+$('hospitalAddForm').onsubmit=e=>{e.preventDefault();const v=$('hospitalNew').value.trim();if(v&&!db.hospitals.some(x=>x.toLowerCase()===v.toLowerCase())){db.hospitals.push(v);save();refreshLists()}$('hospitalNew').value=''};
+$('sourceAddForm').onsubmit=e=>{e.preventDefault();const v=$('sourceNew').value.trim();if(v&&!db.sources.some(x=>x.toLowerCase()===v.toLowerCase())){db.sources.push(v);save();refreshLists()}$('sourceNew').value=''};
+$('importFile').onchange=async ev=>{const file=ev.target.files[0];if(!file)return;try{const x=JSON.parse(await file.text());if(!Array.isArray(x.entries)||!Array.isArray(x.hospitals)||!Array.isArray(x.sources))throw new Error('This file does not look like a PF Tracker backup.');showConfirm('Import backup?','This will replace all current entries and custom lists. Export a backup first if needed.',()=>{db={entries:x.entries.map(e=>({...e,id:e.id||`${Date.now()}-${Math.random()}`})),hospitals:x.hospitals,sources:x.sources};save();renderAll();alert('Backup imported successfully.')},'Import')}catch(err){alert('Could not import backup: '+err.message)}ev.target.value=''};
+$('clearAll').onclick=()=>showConfirm('Delete all records?','This permanently deletes every fee entry from this browser. Export a backup first if you may need these records.',()=>{db.entries=[];save();renderAll()},'Delete all');
+load();refreshLists();resetForm();renderAll();
+</script>
+</body>
+</html>
